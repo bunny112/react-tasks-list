@@ -1,0 +1,28 @@
+.color-button-container {
+    text-align: center;
+    margin-top: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.color-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-button:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+.status-text {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #555;
+    transition: color 0.3s ease;
+}
