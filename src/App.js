@@ -1,30 +1,45 @@
 import React from 'react';
-import FormValidation from './components/FormValidation';
-import TodoList from './components/TodoList';
-import ColorButton from './components/ColorButton';
-import StatusBox from './components/StatusBox';
+import Home from './components/homePage/Home';
+import FormValidation from './components/formValidation/FormValidation';
+import TodoList from './components/todoList/TodoList';
+import ColorButton from './components/colorButton/ColorButton';
+import Navbar from './components/navbar/Navbar';
+import Toggle from './components/toggleButton/Toggle';
+import { Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import Tasks from './components/tasksPage/Tasks';
+import About from './components/aboutPage/About';
+import { ThemeProvider } from "./components/toggleButton/ThemeContext";
+import TodoLists from './functionComponent/TodoLists';
+
+
+
+
 
 
 
 export default function App() {
   return (
     <div>
-      <h1>React Tasks</h1>
+    
+   <ThemeProvider>
+      <Navbar />
 
-      <h2>1. Form Validation</h2>
-      < FormValidation />
+      <Routes>
 
-      <h2>2. TodoList</h2>
-      < TodoList />
-
-      <h2>3. ColorButton</h2>
-      < ColorButton />
-
-      <h2>4. StatusBox</h2>
-
-      <StatusBox status="success" />
-      <StatusBox status="error" />
-      <StatusBox status="warning" />
+        <Route path='/' element={<Home />} />
+        <Route path='/form' element={< FormValidation />} />
+        <Route path='/todo' element={<TodoList />} />
+        <Route path='/Button' element={< ColorButton />} />
+        <Route path='/toggle' element={<Toggle />} />
+        <Route path='/tasks' element={<Tasks />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/todos' element={<TodoLists />} />
+        
+      </Routes>
+    </ThemeProvider>
 
       
     </div>
